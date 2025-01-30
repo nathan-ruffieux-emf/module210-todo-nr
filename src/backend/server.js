@@ -3,6 +3,9 @@ const app = express();
 const port = 8080;
 const path = require('path');
 const bodyParser = require("body-parser");
+const cors = require("cors");
+
+app.use(cors());
 
 const tasksRoutes = require("./routes/tasksRoutes");
 
@@ -25,4 +28,3 @@ app.use((err, req, res, next) => {
 
 // console.log that your server is up and running
 app.listen(port, () => console.log(`Listening on port ${port}`));
-
