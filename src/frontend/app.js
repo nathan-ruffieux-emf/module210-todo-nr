@@ -1,4 +1,4 @@
-const apiEndpoint = "http://20.82.129.31/:8080";
+const apiEndpoint = "https://containerapp.purplesea-13840efb.northeurope.azurecontainerapps.io/api/tasks";
 
 $(document).ready(function () {
   // Charger les tâches au démarrage
