@@ -35,12 +35,12 @@ jobs:
 
       - name: Vérifier l'existence de index.html
         run: |
-        if [ -f ./src/frontend/index.html ]; then
-          echo "Le fichier index.html existe"
-        else
-          echo "Erreur : index.html n’existe pas!"
-          exit 1
-        fi
+          if [ -f src/frontend/index.html ]; then
+            echo "Le fichier index.html existe"
+          else
+            echo "Erreur : index.html n’existe pas!"
+            exit 1
+          fi     
 
       - name: Build And Deploy
         id: builddeploy
