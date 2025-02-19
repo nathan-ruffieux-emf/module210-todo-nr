@@ -55,7 +55,22 @@ jobs:
           output_location: "." # Built app content directory - optional
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
-
+      - name: Attendre la disponibilité du site
+        run: sleep 30s  # Attente pour s'assurer que le site est bien en ligne
+ 
+      - name: Exécuter Lighthouse avec assertions
+        id: lighthouse
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: "https://nathanruffieuxsite210.nathanruffieux03.emf-informatique.ch"
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          assertions: >
+            {
+              "performance": ["error", {"minScore": 0.80}],
+              "accessibility": ["error", {"minScore": 0.85}]
+            }
+            
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
