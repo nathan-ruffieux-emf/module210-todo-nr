@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: acr300622210.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_804802d5d64f448f87e019e847e54362 }}/todo-app:${{ github.sha }}
-        file: ./src/backend/dockerfile
+        run: cd ./src/backend
 
   deploy:
     runs-on: ubuntu-latest
