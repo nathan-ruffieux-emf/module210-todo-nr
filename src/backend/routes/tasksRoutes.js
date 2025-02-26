@@ -17,6 +17,11 @@ router.get("/", async (req, res, next) => {
     }
 });
 
+// TEST
+router.get("/test2", async (req, res, next) => {
+        res.send("test2");
+});
+
 // POST 
 router.post("/", async (req, res, next) => {
     let task = req.body;
