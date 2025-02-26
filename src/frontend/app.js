@@ -1,6 +1,6 @@
 const apiEndpoint = "https://webappruffieux-heauh6b2ezhqfkdu.northeurope-01.azurewebsites.net/api/tasks";
 
-$(document).ready(function () {
+$(document).ready(function () { 
   // Charger les tâches au démarrage
   loadTasks();
 
